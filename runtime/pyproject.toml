@@ -1,0 +1,13 @@
+[project]
+name = "rbm-mdl-runtime"
+version = "1.0.0-era1"
+description = "RBM MDL Layer — Era 1 deterministic mandate-determination runtime (serviceability)"
+requires-python = ">=3.10"
+# Core runtime + client contract are stdlib-only; the HTTP service adds fastapi/uvicorn.
+dependencies = []
+
+[project.optional-dependencies]
+service = ["fastapi>=0.109.0", "uvicorn>=0.27.0"]
+
+[tool.setuptools]
+packages = ["mdl"]
