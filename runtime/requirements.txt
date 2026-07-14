@@ -1,0 +1,4 @@
+# The core MDL runtime and the client contract use only the Python standard library.
+# These are needed ONLY to run the HTTP service (runtime/service/app.py).
+fastapi>=0.109.0
+uvicorn>=0.27.0
