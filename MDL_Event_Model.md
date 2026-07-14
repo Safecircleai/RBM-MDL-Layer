@@ -47,9 +47,17 @@ canonical and groups them by the lifecycle stage that emits them (`MDL_Lifecycle
 | `OVERRIDE_APPROVED` | An override's second authorization is recorded. | Supervisor, Auditor |
 | `OVERRIDE_REVOKED` | An override is revoked (or expires). | Supervisor, Business-Node, Auditor |
 
-*(A future `MANDATE_RETIRED`/`MANDATE_SUPERSEDED` pair is anticipated for the retirement stage; it is
-named here so it is added to this canonical set, not invented ad hoc, when the retirement lifecycle is
-implemented — `Open_Questions_and_Risks.md`.)*
+### Retirement & invalidation events (RATIFIED)
+
+| Event | Emitted when | Primary subscribers |
+|---|---|---|
+| `MANDATE_SUPERSEDED` | A version is superseded by a newer one (forward-only; past determinations stay valid). | Supervisor, subscribed nodes |
+| `MANDATE_RETIRED` | A version sunsets / is retired (forward-only; past determinations stay valid). | Supervisor, subscribed nodes |
+| `MANDATE_VOIDED` | A mandate is voided **ab initio** on a ratified finding of invalid authority (`MDL_Revocation_And_Invalidation.md`, R4). | Supervisor, Auditor, subscribed nodes |
+| `DETERMINATION_INVALIDATED` | A determination is marked invalid by an Invalidation Record overlay (its snapshot is **unchanged**). | Business-Node, Economic, Auditor |
+
+`MANDATE_VOIDED` and `DETERMINATION_INVALIDATED` never mutate a snapshot; they announce an append-only
+overlay (R4). All four are emitted publish-after-commit and scoped like every propagation event.
 
 ## 2. Propagation semantics (scoped, not broadcast)
 

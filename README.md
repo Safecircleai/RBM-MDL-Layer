@@ -85,5 +85,12 @@ Intelligence and Auditor consumers read. Change the occupants and the constituti
 ## Status
 
 **Foundational — constitutional foundation established this sprint. Ratification of the internal doctrine
-(and the canonical jurisdiction stack, `Open_Questions_and_Risks.md` A1/Q1) rests with the Human
-Ratifying Authority**, evidenced by human sign-off, not self-ratified. No implementation exists yet.
+rests with the Human Ratifying Authority**, evidenced by human sign-off, not self-ratified.
+
+**RATIFIED — 2026-07-14 (`Ratification_Log.md`).** The constitutional foundation is **ratified** (R1) and is
+the governing document. The Human Ratifying Authority has also ratified: the **canonical jurisdiction stack**
+(R2, FEDERAL-anchored two-class model — `MDL_Lifecycle.md` §4), the **four constitutional governance roles**
+(R3 — `MDL_Consumer_Model.md` §1a), and the **revocation / void-ab-initio doctrine** (R4 —
+`MDL_Revocation_And_Invalidation.md`). The interim ratification authority is the **Founder**
+(`Ratification_Authority.md`). No implementation exists yet; the build may proceed per
+`Architecture_Validation_Report.md` §3.

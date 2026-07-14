@@ -44,8 +44,16 @@ Occupants illustrate; the role binds (`MDL_Consumer_Model.md`). ✓ = granted; �
 | **Intelligence Consumer** (e.g. Atlas-Sync) | — | — | ✓ (aggregate metrics/health) | ✓ (aggregate only) | — | Transaction/entity-level detail; PII; any write |
 | **Mandate Authoring Authority** (regulator/client/org) | — | ✓ (authors the source obligation via governed intake) | — | ✓ (its own authored mandates) | — | Resolve/determine; touch another authority's mandates |
 | **Auditor / Oversight Consumer** | — | — | — | ✓ (mandates, snapshots, audit trail, read-only) | — | Any write; mutate a snapshot |
-| **Operators** (the node's own staff) | ✓ | ✓ (governed) | ✓ | ✓ | ✓ (schema/role/ops) | Raw edits that bypass audit; mutate snapshot history |
-| **Human Ratifying Authority** | — | — | — | ✓ (everything, governed & logged) | Break-glass only, logged, with reason & expiry | — |
+| **Governance Author** (internal role, C10) | — | ✓ (draft + create versions; **cannot publish**) | ✓ (authoring scope) | ✓ (drafts it owns) | — | Publish; approve/publish its own draft; act as a consumer |
+| **Governance Reviewer** (internal role, C10) | — | ✓ (record review / reject / request revisions) | ✓ | ✓ (mandates under review) | — | Draft or publish the mandate it reviews |
+| **Governance Publisher** (internal role, C10) | — | ✓ (publish approved; make effective; **cannot modify content**) | ✓ | ✓ | — | Modify mandate content; draft; review its own publish |
+| **Human Ratification Authority (HRA)** | — | — | — | ✓ (everything, governed & logged) | Ratification only (constitutional/jurisdiction/immutable-doctrine); **never operational authoring** | Draft, review, or publish a mandate; act as a consumer |
+
+**On administration (ratified, R3).** There is **no generic "Operators" or "admin" constitutional role**. The
+four constitutional roles above (HRA + Author/Reviewer/Publisher) are exhaustive for MDL's own actors.
+*Structural/schema* changes are **constitutional** and require **HRA ratification**; *routine operational
+administration* is a task performed **under** a defined governance role's scope by operational staff who are
+**never themselves constitutional actors** (`MDL_Consumer_Model.md` §1a). Every such action is audited.
 
 ## 2. The supervision boundary (called out because it is easily over-granted)
 

@@ -23,7 +23,7 @@ after the outcome, off the critical path.
 3. Governance ▷ Review (conformance: shape, precedence coherence, ceiling guards)
                                         ⇒ validates the encoding, never the source
    ∥ Audit ▷ record review outcome
-4. Governance ▷ Approve (required authoring role)   [BLOCKED-INPUT: roles undefined, audit CR-2]
+4. Governance ▷ Review + Approve (Governance Reviewer) then hand to Publisher   (RATIFIED R3; SoD: Author ≠ Reviewer ≠ Publisher)
                                         ⇒ role-based; no non-authoring writer
    ∥ Audit ▷ record approval + approver
 5. Versioning ▷ assign version, link supersession   ⇒ prior versions untouched (I2)
@@ -49,7 +49,7 @@ are at-least-once).
      → Versioning ▷ select in-force version at as_of      ⇒ pure function of (chain, as_of)
      → Jurisdiction ▷ order by precedence + apply inheritance (FLOOR/ADDITIVE/OVERRIDE)
                                         ⇒ deterministic; same-level tie → Sequence 5
-        [BLOCKED-INPUT: canonical stack unratified, audit A1 — refuse multi-layer until ratified]
+        (RATIFIED R2: FEDERAL-anchored two-class stack; OVERRIDE only within a class; contract FLOOR-only)
    ⇒ produces the Resolved Mandate Set (version-pinned), deterministically
 3. Determination ▷ evaluate entity state against the Resolved Mandate Set
      ⇒ compliance status + per-rule gaps; authoritative, not advisory (I6)
@@ -149,7 +149,8 @@ supersession recorded); nothing is half-upgraded.
 5. While unresolved, determinations for that exact conflicting context return UNRESOLVED
 ```
 **Guarantee:** the runtime is deterministic in producing `UNRESOLVED`; it never fabricates a winner.
-**[BLOCKED-INPUT]** step 2 requires the ratified canonical stack (audit A1) for (a) to be correct.
+Step 2 uses the ratified two-class stack (R2); OVERRIDE never crosses a class, so a contract can never win an
+OVERRIDE against public law.
 
 ---
 

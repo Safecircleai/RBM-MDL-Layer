@@ -25,8 +25,8 @@ Draft → Reviewed → Approved → Published → Effective → ┬→ Supersede
 - **Draft** — encoded, not yet reviewed. Not resolvable.
 - **Reviewed** — passed conformance review (schema-shape, precedence coherence, ceiling guards). Not
   resolvable.
-- **Approved** — admitted by the required authoring role. **[BLOCKED-INPUT]** roles undefined (audit CR-2).
-  Not yet resolvable.
+- **Approved** — admitted by the **Governance Reviewer** (RATIFIED R3; the Author cannot approve its own
+  draft — `../MDL_Consumer_Model.md` §1a). Not yet resolvable.
 - **Published** — version assigned; content frozen; resolvable **within its effective window**.
 - **Effective** — the current date is inside the effective window; actively applies to new resolutions.
 - **Superseded** — a later version has replaced it for future resolutions; historical snapshots keep pinning
@@ -54,16 +54,22 @@ Draft → Reviewed → Approved → Published → Effective → ┬→ Supersede
 - A version in Published/Effective/Superseded/Retired/Archived is **never deleted** (snapshots reference it).
 - Superseded and Retired both stop *future* application but **never invalidate frozen snapshots** (snapshot
   isolation, I2).
+- **Void** (RATIFIED R4) is a terminal state distinct from Retired: reachable from any post-Draft state on a
+  ratified finding of **invalid authority** (`MDL_Revocation_And_Invalidation.md`). Unlike Retired, Void
+  *invalidates* the determinations that rested on the mandate — but **via an append-only Invalidation Record
+  overlay, never by mutating any snapshot** (I2). Voiding a version writes an Invalidation Record and emits
+  `MANDATE_VOIDED`; it deletes nothing.
 
 **Illegal transitions (MUST be rejected):**
 - Any backward transition past Published (e.g. Published → Draft, Approved → Reviewed → edit-content).
 - Effective → Draft/Reviewed/Approved (no un-publishing).
-- Any → Deleted (mandates are never deleted; `MDL_Lifecycle.md` §5).
+- Any → Deleted (mandates are never deleted; `MDL_Lifecycle.md` §5) — **including Void, which deletes
+  nothing** and only overlays.
 - Editing Rule Set / Applicability / Effectivity / Jurisdiction Layer of a Published+ version (must be a new
   version).
-- **[BLOCKED-INPUT / illegal-until-ratified]** Any transition to a "Revoked/Void" state — no such state exists
-  in doctrine; a mandate authored under invalid authority has **no legal transition** today (audit CR-3). The
-  runtime MUST NOT invent one; it surfaces the case for ratification.
+- Transitioning to Void **by mutating or deleting** a snapshot/determination/audit entry — Void is achieved
+  only by appending an Invalidation Record; any implementation that edits a frozen artifact to "void" it is
+  illegal (`MDL_Revocation_And_Invalidation.md` §1–§2).
 
 **Recovery behavior:**
 - A failure between Draft→Approved leaves an **Authoring Work Item** in its last durable state; the workflow

@@ -28,17 +28,23 @@ inside EchoForge.
 Constitutional foundation established this sprint (21 doctrine documents + IEF/IAF applications). No
 services, APIs, schemas, or migrations exist — by design.
 
+## Ratifications (2026-07-14 — `Ratification_Log.md`, interim HRA: the Founder)
+
+- **R1 Constitutional foundation — RATIFIED** (governing document).
+- **R2 Canonical jurisdiction stack — RATIFIED** (FEDERAL-anchored two-class model; PRIME-apex rejected).
+- **R3 Four constitutional governance roles — RATIFIED** (HRA + Author/Reviewer/Publisher; separation of duties).
+- **R4 Revocation / void-ab-initio — RATIFIED** (own doctrine; remediation half).
+
 ## Known risks
 
 - Doctrine only; no runtime capability yet (readiness intentionally low).
-- **Canonical jurisdiction stack unresolved** — the uploaded MDL Specification and Jurisdiction Stack
-  Model disagree on precedence ordering (see `Open_Questions_and_Risks.md` A1). Needs ratification before
-  implementation.
-- Internal doctrine is a proposed foundation pending constitutional ratification by the Human Ratifying
-  Authority.
+- **Authority-lineage / delegation** (the *detection* of invalid authority) still to be ratified — R4 ratified
+  the *remediation*, not the detection.
+- Retention vs data-erasure under never-delete immutability remains an open constitutional pressure
+  (`engineering/MDL_Persistence_Model.md` §7).
 
 ## Recommended next action
 
-Ratify (a) the internal mandate doctrine and (b) the canonical jurisdiction stack, by the Human Ratifying
-Authority, evidenced by recorded human sign-off. Implementation then proceeds by strangler-fig extraction
+The constitution and its four gating decisions are ratified. Implementation may proceed in the build order of
+`Architecture_Validation_Report.md` §3, by strangler-fig extraction
 from CFRS per `Migration_Strategy_CFRS_to_RBM_MDL.md` — not before.

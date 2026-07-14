@@ -7,6 +7,20 @@ Authority. Architecture and doctrine only.
 **Governed by:** `MDL_Infrastructure_Constitution.md`. **Evidence discipline:** conflicts are **[FACT]**
 (both sources quoted/located) or **[INFERENCE]** (this sprint's reading).
 
+> **RATIFICATION UPDATE — 2026-07-14 (`Ratification_Log.md`).** Several items below are now **RESOLVED by HRA
+> ratification** and are retained for history:
+> - **A1 / Q1 (jurisdiction ordering) — RESOLVED (R2):** ratified as the FEDERAL-anchored two-class model
+>   (Option B); the MDL Spec PRIME-apex ordering is explicitly rejected. See `MDL_Lifecycle.md` §4.
+> - **CR-2 authoring/ops roles (Q7 authorship) — RESOLVED (R3):** four constitutional roles (HRA, Governance
+>   Author/Reviewer/Publisher) with separation of duties; no generic "Operators". See `MDL_Consumer_Model.md`
+>   §1a. *(The PROGRAM/INTERNAL authorship question Q7 is answered: a Governance Author under the workflow,
+>   never operational staff as constitutional actors.)*
+> - **CR-3 revocation — RESOLVED (R4, remediation half):** ratified as its own doctrine
+>   `MDL_Revocation_And_Invalidation.md` (nothing deleted; void ab initio via append-only overlay). The
+>   **detection** half (delegation / authority-lineage) remains open (below).
+> Items still open: Q2 (spec ownership), Q3/Q4/Q5 (Trust-Runtime seam, eligibility line, discipline
+> determinism), the **authority-lineage/delegation** detection model, and H-8 (retention vs erasure).
+
 ---
 
 ## PART A — Conflict & Source-Reconciliation Report

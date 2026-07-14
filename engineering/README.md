@@ -8,9 +8,14 @@ contain no code, APIs, schemas, database design, or endpoints, and they introduc
 beyond the eleven Core capabilities already validated.
 
 Where a specification depends on an input that is not yet ratified, it is marked **[BLOCKED-INPUT]** and the
-input is named — it is never decided here (deciding would be new doctrine). Three such inputs recur: the
-canonical jurisdiction stack (audit A1), the authoring/ops role set (audit CR-2), and revocation/void-ab-initio
-semantics (audit CR-3).
+input is named — it is never decided in the specs (deciding is the HRA's).
+
+**RATIFICATION UPDATE — 2026-07-14 (`../Ratification_Log.md`).** The three inputs these specs were blocked on
+are now **RATIFIED**: the **canonical jurisdiction stack** (R2, `../MDL_Lifecycle.md` §4), the **authoring
+roles** (R3, four constitutional roles — `../MDL_Consumer_Model.md` §1a), and **revocation/void-ab-initio**
+(R4, `../MDL_Revocation_And_Invalidation.md`). Residual `[BLOCKED-INPUT]` markers in these documents refer now
+only to the **detection** of invalid authority (delegation / authority-lineage), which remains open. The specs
+are otherwise fully implementable in the build order of `../Architecture_Validation_Report.md` §3.
 
 | # | Document | Defines |
 |---|---|---|

@@ -10,7 +10,7 @@ layer: Infrastructure
 classification: Governance Infrastructure (Constitutional Node — Mandate Definition Layer)
 node_type: governance-infrastructure
 constitutional_owner: RBM
-operational_status: Foundational
+operational_status: Foundational (constitution ratified 2026-07-14; pre-implementation)
 readiness: 5
 
 purpose: >-
@@ -57,16 +57,24 @@ current_milestone: >-
   Constraints, Open Questions & Risks (incl. source-conflict report), Independence
   Review. No implementation.
 
+ratifications:                 # HRA decisions recorded in Ratification_Log.md (2026-07-14)
+  - R1 Constitutional foundation — RATIFIED
+  - R2 Canonical jurisdiction stack — RATIFIED (FEDERAL-anchored two-class model)
+  - R3 Four constitutional governance roles — RATIFIED (separation of duties)
+  - R4 Revocation / void-ab-initio doctrine — RATIFIED (remediation half)
+  ratification_authority: Founder (interim HRA per Ratification_Authority.md)
+
 known_risks:
   - Doctrine only; no runtime capability exists yet (readiness intentionally low)
-  - Canonical jurisdiction stack unresolved — the uploaded MDL Spec and Jurisdiction
-    Stack Model disagree on ordering (Open_Questions_and_Risks.md A1); needs ratification
-  - Internal doctrine is proposed foundation pending constitutional ratification by the
-    Human Ratifying Authority
+  - Authority-lineage / delegation (invalid-authority DETECTION) still to be ratified;
+    R4 ratified the remediation, not the detection (Ratification_Log.md standing items)
+  - Retention vs data-erasure under never-delete immutability remains an open pressure
+    (engineering/MDL_Persistence_Model.md §7)
 
 known_blockers: []
 
 recommended_next_action: >-
-  Ratify (a) the internal mandate doctrine and (b) the canonical jurisdiction stack, by
-  the Human Ratifying Authority, evidenced by recorded human sign-off. Implementation
-  then proceeds by strangler-fig extraction from CFRS per Migration_Strategy, not before.
+  Constitution and its four gating decisions are ratified (Ratification_Log.md).
+  Implementation may now proceed in the build order of Architecture_Validation_Report.md
+  §3, by strangler-fig extraction from CFRS per Migration_Strategy. Ratify the
+  authority-lineage/delegation detection model before relying on invalidation triggers.

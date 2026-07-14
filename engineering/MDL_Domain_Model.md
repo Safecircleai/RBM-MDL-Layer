@@ -59,8 +59,8 @@ domain, not a runtime.
 - **Mutable fields:** none at runtime.
 - **Relationships:** a Mandate Version has exactly one Jurisdiction Layer; the **Jurisdiction Stack** orders
   all layers.
-- **Invariants:** precedence is total and explicit; **[BLOCKED-INPUT]** the canonical ordering is unratified
-  (audit A1) and MUST be supplied before jurisdiction resolution is deterministic.
+- **Invariants:** precedence is total and explicit; **RATIFIED (R2)** — the canonical ordering is the
+  FEDERAL-anchored two-class stack (`../MDL_Lifecycle.md` §4); jurisdiction resolution is deterministic over it.
 
 ## 5. Jurisdiction Stack
 - **Purpose:** the total precedence order + conflict-resolution rules across all Jurisdiction Layers.
@@ -215,8 +215,9 @@ domain, not a runtime.
 - **Immutable fields:** the intake identity; the source-authority attribution.
 - **Mutable fields:** the encoded draft content; the workflow state; review/approval records.
 - **Relationships:** produces one **Mandate Version** on approval; appends to Audit at each step.
-- **Invariants:** never publishes without the required role approval (**[BLOCKED-INPUT]** roles undefined,
-  audit CR-2); never authors the source obligation itself.
+- **Invariants:** never publishes without the required role approval (**RATIFIED R3** — Governance
+  Reviewer approves, Governance Publisher publishes, Author cannot self-approve; `../MDL_Consumer_Model.md`
+  §1a); never authors the source obligation itself.
 
 ---
 

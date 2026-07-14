@@ -28,7 +28,7 @@ or more Core capabilities (C1–C11). Dependencies match the build DAG (`Archite
   Item.
 - **Owns:** the application of the precedence stack and inheritance semantics.
 - **Cannot own:** the *authoring* of the stack (ratified doctrine); ad-hoc conflict resolution.
-- **Dependencies:** the ratified stack (**[BLOCKED-INPUT]** audit A1); Registry + Versioning outputs.
+- **Dependencies:** the ratified stack (**RATIFIED R2** — FEDERAL-anchored two-class, `../MDL_Lifecycle.md` §4); Registry + Versioning outputs.
 - **Guarantees:** deterministic ordering for identical inputs; same-level equal-date ties are flagged, never
   auto-resolved (I4).
 - **Failure conditions:** if the stack is unratified it MUST refuse cross-layer resolution rather than pick an
@@ -121,8 +121,8 @@ or more Core capabilities (C1–C11). Dependencies match the build DAG (`Archite
 - **Owns:** the Intake→Encode→Review→Approve workflow and its RBAC.
 - **Cannot own:** the authoring of the source obligation; a non-authoring role writing a mandate; the
   supervision of bots (that is the external Governance Supervisor).
-- **Dependencies:** Registry, Versioning, Audit; **the defined authoring/ops roles** (**[BLOCKED-INPUT]** audit
-  CR-2).
+- **Dependencies:** Registry, Versioning, Audit; **the four ratified governance roles** (**RATIFIED R3** — HRA
+  + Governance Author/Reviewer/Publisher, separation of duties, `../MDL_Consumer_Model.md` §1a).
 - **Guarantees:** compile-not-legislate (I8); role-gated writes; every step audited; no partial publish.
 - **Failure conditions:** a failure before publish leaves an Authoring Work Item to resume; no half-published
   mandate; cannot verify *authority to author* until delegation/lineage exist (audit CR-3 cluster).

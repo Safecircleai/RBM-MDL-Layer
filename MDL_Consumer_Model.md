@@ -54,6 +54,35 @@ of it — that is the entire point of the model.
 
 ---
 
+## 1a. Internal governance roles (separation of duties) — RATIFIED
+
+The roles in §1 are *consumers* (external systems). The MDL domain's own **authoring workflow** (capability
+C10) is operated by four **constitutional roles**, ratified by the Human Ratifying Authority on 2026-07-14
+(`Ratification_Log.md` R3), with strict **separation of duties**. These are internal actors of the Definition
+lifecycle (`MDL_Lifecycle.md` §1); they are not consumer roles and hold no consumer privilege.
+
+| Constitutional role | May | May NOT |
+|---|---|---|
+| **Human Ratification Authority (HRA)** | Ratify constitutional changes, jurisdiction changes, and immutable doctrine (`Ratification_Authority.md`). | **Perform operational authoring** — never drafts, reviews, or publishes a mandate. |
+| **Governance Author** | Draft mandates; encode them; create versions. | **Publish**; make a version effective; approve its own work. |
+| **Governance Reviewer** | Review; reject; request revisions. | Draft the mandate it reviews; publish. |
+| **Governance Publisher** | Publish approved mandates; make versions effective. | **Modify mandate content**; draft; review its own publish. |
+
+**Separation-of-duties invariants:**
+- The three workflow roles are **mutually exclusive per mandate**: the Author of a mandate is neither its
+  Reviewer nor its Publisher; the Reviewer is not the Publisher. No single actor moves a mandate from Draft to
+  Effective alone.
+- **The HRA never performs operational authoring** — ratification and authoring are separate powers; the HRA
+  admits *constitutional* change, not *operational* content.
+- **Operational staff are never constitutional actors.** A person may *act under* one of these roles (with its
+  RBAC), but "operational staff" is not itself a role and holds no standing; there is no generic "Operators"
+  authority. This ratification retires the previously-undefined "Operators"/"ops-admin" actor (audit CR-2).
+
+These roles map onto the authoring states in `engineering/MDL_State_Model.md`: Author→Draft,
+Reviewer→Reviewed, Publisher→Approved→Published→Effective.
+
+---
+
 ## 2. What a consumer may do, and what it may never do
 
 Uniform rules that bind every consumer role, so the domain's independence does not depend on the good

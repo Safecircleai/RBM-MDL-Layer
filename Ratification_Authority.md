@@ -52,12 +52,15 @@ doctrine now resolves, in the interim, to **the Founder**. The following decisio
 the Founder's ratification** (none is decided here; each is presented in a decision-support artifact already
 in this repository):
 
-| # | Decision awaiting ratification | Where the options are laid out | Blocks |
+**All four decisions below were RATIFIED on 2026-07-14 by the Founder (HRA); see `Ratification_Log.md` for the
+decisions and the amendments each triggered.**
+
+| # | Decision | Status | Outcome |
 |---|---|---|---|
-| 1 | **The constitutional foundation itself** — ratify the internal MDL doctrine as the governing constitution. | `README.md` (Status), all root doctrine | The node's constitutional standing |
-| 2 | **The canonical jurisdiction stack** (audit A1) | `Jurisdiction_Stack_Ratification_Analysis.md` §8 — Options A / B(recommended) / C / D | Jurisdiction Resolution (C3); the build critical path |
-| 3 | **The authoring / ops role set** (audit CR-2) | `Architecture_Validation_Report.md`; `engineering/MDL_Component_Contracts.md` (Governance, Interfaces) | Authoring workflow + admin projection (C10, C11) |
-| 4 | **Revocation / void-ab-initio semantics** (audit CR-3) | `Architecture_Audit_Report.md` CR-3; `engineering/MDL_State_Model.md` §1 (illegal-until-ratified) | Trusted snapshot/override for invalid-authority cases |
+| 1 | **The constitutional foundation itself** | **RATIFIED (R1)** | The MDL Constitution is the governing document. |
+| 2 | **The canonical jurisdiction stack** (audit A1) | **RATIFIED (R2)** | Option B — FEDERAL-anchored two-class model (`MDL_Lifecycle.md` §4); PRIME-apex rejected. |
+| 3 | **The authoring / operations roles** (audit CR-2) | **RATIFIED (R3)** | Four constitutional roles, separation of duties, no generic "Operators" (`MDL_Consumer_Model.md` §1a). |
+| 4 | **Revocation / void-ab-initio semantics** (audit CR-3) | **RATIFIED (R4)** | Own doctrine `MDL_Revocation_And_Invalidation.md`; remediation ratified, detection (lineage) still open. |
 
 A ratification is recorded when the Founder issues a decision; the resulting change is the **minimal doctrine
 amendment** named in each artifact (e.g. the one-line jurisdiction-stack amendment to `MDL_Lifecycle.md` §4),

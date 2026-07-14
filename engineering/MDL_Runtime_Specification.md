@@ -72,9 +72,9 @@ Rules the runtime MUST enforce on the deterministic path:
 - **Reproducibility:** identical (entity context, persisted mandate versions) MUST yield an identical
   resolved set, determination, and snapshot content. A consumer or auditor replaying the same inputs against
   the same versions gets the same snapshot.
-- **[BLOCKED-INPUT]** Jurisdiction precedence (C3) cannot be made deterministic until the canonical
-  jurisdiction stack is ratified (audit A1). Until then the runtime MUST refuse to resolve across more than
-  one jurisdiction layer rather than pick an order.
+- **RATIFIED (R2):** Jurisdiction precedence (C3) uses the ratified FEDERAL-anchored two-class stack
+  (`MDL_Lifecycle.md` §4). Deterministic across the ratified order; the runtime refuses only an *unranked*
+  layer (one not present in the stack), never picks an order.
 
 Off-path (may vary in timing, never in truth): Audit append order timing, Distribution delivery timing,
 Authoring human steps, Interface routing.
@@ -91,8 +91,9 @@ request can never enter it — validation §2.1, I8/I10). Its runtime behavior:
    effectivity). Encoding is data-driven, never hardcoded per node.
 3. **Review** — a conformance check (schema-shape validity, precedence coherence, ceiling guards) runs; it
    validates the *encoding*, never the *source*.
-4. **Approve** — a role-based approval admits the mandate. **[BLOCKED-INPUT]** the authoring/ops roles are
-   undefined (audit CR-2); the approval step's actor set MUST be supplied before this path is built.
+4. **Approve** — a role-based approval admits the mandate. **RATIFIED (R3):** the actors are the Governance
+   Reviewer (reviews/approves) and Governance Publisher (publishes); the Author cannot approve or publish its
+   own draft (separation of duties, `MDL_Consumer_Model.md` §1a).
 5. **Version** — a version is assigned; supersession is linked; prior versions are untouched.
 6. **Publish** — the version becomes resolvable within its effective window.
 
@@ -201,14 +202,23 @@ The runtime fails **closed and honest**, never open and guessing:
 
 ## 11. What this specification does not decide (required inputs)
 
-To keep this implementable *without architectural decisions*, the following remain **ratified inputs the
-runtime consumes**, not choices made here:
-- The **canonical jurisdiction precedence stack** (audit A1) — deterministic resolution is blocked without it.
-- The **authoring/ops role set** (audit CR-2) — the authoring/admin projections cannot be specified without it.
-- The **revocation / void-ab-initio semantics** (audit CR-3) — until ratified, the runtime supports only
-  Supersede/Sunset/Retire; it has no behavior for invalidating a mandate authored under void authority.
+**RATIFICATION UPDATE — 2026-07-14 (`Ratification_Log.md`).** Three of the four inputs below are now
+**RATIFIED** and are supplied to the runtime; the `[BLOCKED-INPUT]` markers earlier in this document are
+lifted accordingly:
+- The **canonical jurisdiction precedence stack** — **RATIFIED (R2):** the FEDERAL-anchored two-class model
+  (`MDL_Lifecycle.md` §4). Deterministic resolution (§3) is now unblocked; the runtime resolves across the
+  ratified stack and refuses only an *unranked* layer.
+- The **authoring roles** — **RATIFIED (R3):** HRA + Governance Author / Reviewer / Publisher, separation of
+  duties, no generic "Operators" (`MDL_Consumer_Model.md` §1a). The authoring path (§4) and admin projection
+  (§5) use these roles.
+- The **revocation / void-ab-initio semantics** — **RATIFIED (R4):** `MDL_Revocation_And_Invalidation.md`
+  (append-only invalidation overlay; nothing deleted). The runtime now supports Void in addition to
+  Supersede/Sunset/Retire.
+
+Still an open input, not decided here:
 - Whether and how the runtime may ever consume a discipline determination (audit CR-4) — excluded from the
   deterministic path here.
+- The **detection** of invalid authority (delegation / authority-lineage) — R4 ratified the *remediation*; the
+  detection trigger remains a ratified HRA finding until the lineage model is ratified.
 
-An engineer implements everything else directly from §§1–10; these four are supplied to the runtime as
-ratified doctrine before the dependent component is built.
+An engineer implements everything else directly from §§1–10.

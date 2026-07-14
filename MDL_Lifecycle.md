@@ -79,40 +79,56 @@ them at **Resolve**. The join is one-way and clean: publishing a mandate never t
 snapshots it). This one-way join is what lets one mandate version be snapshotted thousands of times
 without any feedback loop into the definition.
 
-## 4. The Jurisdiction Stack (resolution's backbone)
+## 4. The Jurisdiction Stack (resolution's backbone) — RATIFIED (Option B)
 
-Resolution's precedence backbone, per the uploaded *Jurisdiction Stack Model v1.0* (the more complete of
-the source orderings — see the source-conflict note below).
+Resolution's precedence backbone, **ratified by the Human Ratifying Authority on 2026-07-14** as the
+FEDERAL-anchored **two-class model** (`Jurisdiction_Stack_Ratification_Analysis.md` Option B;
+`Ratification_Log.md` R2). The two classes separate *precedence* (who wins an OVERRIDE) from *minimum
+required compliance* (a FLOOR a lower authority may raise but never lower).
 
-**Precedence (highest wins in conflict):**
+**Class 1 — Governmental / legal spine** (OVERRIDE-precedence, highest wins in conflict, top-down):
 
 ```
-FEDERAL  ▸  PRIME_CONTRACT  ▸  STATE  ▸  COUNTY  ▸  MUNICIPAL  ▸  PROGRAM  ▸  INTERNAL
+[reserved: GLOBAL / SUPRANATIONAL / TREATY]  ▸  FEDERAL  ▸  STATE  ▸  COUNTY  ▸  MUNICIPAL
+                                         (+ reserved: TRIBAL / sovereign, ranked per legal status)
+```
+
+**Class 2 — Contractual / organizational** (FLOOR/ADDITIVE only; may NEVER OVERRIDE Class 1):
+
+```
+PRIME_CONTRACT  ▸  PROGRAM  ▸  INTERNAL
 ```
 
 **Inheritance behaviors** (each mandate declares one):
-- **FLOOR** — lower layers may *increase* requirements but not reduce them.
+- **FLOOR** — lower layers, and any Class-2 layer over the Class-1 result, may *increase* requirements but
+  never reduce them.
 - **ADDITIVE** — lower layers *accumulate* constraints.
-- **OVERRIDE** — a higher layer fully replaces lower behavior.
+- **OVERRIDE** — a higher layer fully replaces lower behavior — **only within the same class** (rule 1).
 
-**Conflict resolution rules** (deterministic):
-1. Compare precedence level; apply the higher.
-2. If the same level, the newer `effective_date` wins.
-3. If equal and ambiguous, **flag the conflict for review** — it must not auto-resolve (uploaded
-   *Jurisdiction Stack* §3). This is why `Conflict-Review Queue` is a capability
-   (`MDL_Capability_Framework.md` §2).
+**Ratified governing rules:**
+1. **OVERRIDE flows only downward within a class.** A Class-1 layer may OVERRIDE a lower Class-1 layer; a
+   Class-2 layer may OVERRIDE a lower Class-2 layer. **No Class-2 layer may OVERRIDE any Class-1 layer** — a
+   private contract can never remove a legal (governmental) requirement.
+2. **Class-2 may FLOOR/ADD over the Class-1 result** — this is how a client contract lawfully imposes
+   requirements stricter than statute (stringency), without gaining precedence over law.
+3. **Tiebreak within a tier:** the newer `effective_date` wins; equal-and-ambiguous → **flag for review**,
+   never auto-resolve (Conflict-Review Queue capability; invariant I4).
+4. **Ranks are assigned as tier numbers with gaps** (Class-1: reserved 10/20/50 above FEDERAL=100, then
+   STATE=200, COUNTY=300, MUNICIPAL=400, plus a reserved TRIBAL slot; Class-2: PRIME_CONTRACT=600,
+   PROGRAM=700, INTERNAL=800), so a future tier inserts by taking an unused number, never renumbering —
+   satisfying Principle 10 ("boundaries cut for the end state").
 
-**Financial (tax) override precedence** resolves in order Federal ▸ Prime ▸ State ▸ Vendor Profile ▸ Auto
-Tax Engine; if any layer sets `tax_exempt_override=True`, tax is zero (uploaded *Jurisdiction Stack* §5).
+**Financial (tax) override precedence** is the special case of rules 1–2 for the financial-policy rule:
+federal tax law (Class-1 apex) is honored first, then state; a Class-2 contract may only *raise* obligations,
+or apply a mandate-level tax exemption where a *higher legal authority* permits it — never as a contract
+overriding tax law (consistent with the Economic Consumer's external-authority sovereignty). MDL owns the
+override *determination*; the Economic Consumer books the effect.
 
-> **Source-conflict note [FACT].** The three source documents give *three different* jurisdiction
-> orderings: the CFRS `MDL_LAYER_README.md:129,176-182` uses FEDERAL→STATE→PRIME→LOCAL; the uploaded
-> *MDL Specification* §2.4 uses PRIME→STATE→LOCAL→PROGRAM→INTERNAL (PRIME at the top, no FEDERAL); the
-> uploaded *Jurisdiction Stack Model v1.0* §1 uses FEDERAL→PRIME_CONTRACT→STATE→COUNTY→MUNICIPAL→PROGRAM
-> →INTERNAL. This doctrine adopts the *Jurisdiction Stack Model v1.0* as the most complete and most
-> recent, and records the divergence as an open item for ratification in
-> `Open_Questions_and_Risks.md`. The precedence stack is doctrine and must be ratified before
-> implementation, because a wrong ordering silently changes every conflict determination.
+> **Supersedes the prior source-conflict note.** The three source orderings (CFRS FEDERAL→STATE→PRIME→LOCAL;
+> MDL Spec PRIME→STATE→LOCAL→PROGRAM→INTERNAL; Jurisdiction Stack Model FEDERAL→PRIME_CONTRACT→STATE→COUNTY→
+> MUNICIPAL→PROGRAM→INTERNAL) are resolved by this ratification. The MDL Specification's **PRIME-apex
+> ordering is explicitly rejected** as legally invalid — a contract cannot override public law. See
+> `Jurisdiction_Stack_Ratification_Analysis.md` and `Ratification_Log.md` R2.
 
 ## 5. Is the lifecycle complete?
 

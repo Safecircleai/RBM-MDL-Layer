@@ -36,6 +36,7 @@ engine.** These are semantic classifications an engineer maps onto whatever stor
 | **Snapshot** | **Immutable + retained forever** | The anchor of record; the heaviest persistence. |
 | **Override (grant)** | **Mutable status over immutable core** | Bound Snapshot ref, requestor, approver, reason, expiry are immutable; only status (Active→Revoked) and revocation stamp move. |
 | **Audit Event** | **Append-only + immutable** | Never edited or deleted. |
+| **Invalidation Record** (RATIFIED R4) | **Append-only + immutable** | Voids a mandate ab initio / marks determinations invalid as an *overlay*; never mutates a snapshot, determination, or audit entry (`MDL_Revocation_And_Invalidation.md`). |
 | **Propagation Event** | **Append-only** (delivery log/outbox) | Emitted after commit; retained per delivery policy. |
 | **Consumer Registration** | Mutable | Scope/subscription/projection may change; changes audited. |
 | **Conflict-Review Item** | Mutable status over immutable conflict facts | The conflicting versions + context are immutable; review status moves. |
