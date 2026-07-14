@@ -1,0 +1,72 @@
+# Atlas status configuration for RBM-MDL-Layer.
+# Metadata only — how the ecosystem intelligence layer (Atlas-Sync) sees this node.
+# This is ecosystem registration, not implementation.
+
+name: RBM MDL Layer
+atlas_id: rbm-mdl-layer
+repository: safecircleai/RBM-MDL-Layer
+owner: SafeCircle AI
+layer: Infrastructure
+classification: Governance Infrastructure (Constitutional Node — Mandate Definition Layer)
+node_type: governance-infrastructure
+constitutional_owner: RBM
+operational_status: Foundational
+readiness: 5
+
+purpose: >-
+  The constitutional Mandate Domain of the RBM ecosystem: the single authoritative
+  owner of resolved-mandate truth. It compiles authored obligations (regulatory,
+  contractual, organizational, operational) into structured, versioned mandates and
+  deterministically resolves and determines which apply to any entity, in any
+  jurisdiction, at any time — with immutable snapshots as the audit artifact. It owns
+  the determination; it does not author the source law, execute the business or
+  economic act, or supervise the ecosystem. Not the CFRS implementation, and not
+  hosted inside EchoForge. This repository currently contains doctrine only.
+
+# This node is an independent infrastructure node: it has no constitutional dependency
+# on any other repository, runtime, or assistant. Every other system is a consumer of
+# its doctrine (see MDL_Consumer_Model.md), never a parent.
+constitutional_dependencies: []
+
+operational_dependencies: []   # none yet — no implementation in the constitutional phase
+
+# The uploaded operational specs this doctrine governs and remains consistent with
+# (not owned here; consistency-reconciliation in Open_Questions_and_Risks.md Part A).
+governed_operational_specs:
+  - Mandate Definition Layer Specification v1.0
+  - MDL <-> EchoForge Service Contract v1
+  - Jurisdiction Stack Model v1.0
+
+consumer_roles:                # who consumes this node (roles, not named runtimes)
+  - Human Ratifying Authority
+  - Mandate Authoring Authority
+  - Governance Supervisor
+  - Doctrine-Governance Consumer
+  - Business-Node Consumer
+  - Economic Consumer (peer)
+  - Discipline-Determination Provider (peer)
+  - Intelligence Consumer
+  - Auditor / Oversight Consumer
+
+current_milestone: >-
+  Constitutional foundation established. Doctrine set: Consumer Model, Immutable Core
+  Charter, Infrastructure Constitution, Ownership Analysis, Truth Ownership Matrix,
+  Responsibility Matrix, Capability Framework, Lifecycle, Internal Architecture,
+  External Interfaces, Consumption Model, Event Model, Repository Blueprint, Ownership
+  Report, Migration Strategy, Roadmap, Industry Comparison, IEF, IAF, Architectural
+  Constraints, Open Questions & Risks (incl. source-conflict report), Independence
+  Review. No implementation.
+
+known_risks:
+  - Doctrine only; no runtime capability exists yet (readiness intentionally low)
+  - Canonical jurisdiction stack unresolved — the uploaded MDL Spec and Jurisdiction
+    Stack Model disagree on ordering (Open_Questions_and_Risks.md A1); needs ratification
+  - Internal doctrine is proposed foundation pending constitutional ratification by the
+    Human Ratifying Authority
+
+known_blockers: []
+
+recommended_next_action: >-
+  Ratify (a) the internal mandate doctrine and (b) the canonical jurisdiction stack, by
+  the Human Ratifying Authority, evidenced by recorded human sign-off. Implementation
+  then proceeds by strangler-fig extraction from CFRS per Migration_Strategy, not before.
