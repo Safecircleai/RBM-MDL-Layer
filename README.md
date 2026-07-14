@@ -3,6 +3,11 @@
 **The constitutional Mandate Domain of the RiteByMe (RBM) ecosystem — an independent infrastructure
 node.**
 
+> **Doctrine v1.0 — FROZEN (2026-07-14).** Architectural closure reached
+> (`Constitutional_Traceability_Review.md`); constitution ratified (`Ratification_Log.md` R1–R4); doctrine
+> frozen (`DOCTRINE_FREEZE.md`). Standing rule: **no new doctrine unless implementation proves a
+> constitutional defect.** Implementation proceeds per `Architecture_Validation_Report.md` §3.
+
 RBM-MDL-Layer is the single authoritative owner of the ecosystem's **resolved-mandate truth**: the one
 node that compiles authored obligations (regulatory, contractual, organizational, operational) into
 structured, versioned mandates and *deterministically resolves and determines* which of them apply to
